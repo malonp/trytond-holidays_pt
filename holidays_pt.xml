@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data>
+        <!-- Lei nº 7/2009 de 12 de fevereiro, Codigo do Trabalho -->
+        <!-- Lei nº 8/2016 de 1 de abril -->
+        <record id="PT01" model="holidays.calendar">
+            <field name="name">Feriados Nacionais de Portugal</field>
+            <field name="owner" search="[('login', '=', 'admin')]"/>
+            <field name="description">Feriados Nacionais</field>
+        </record>
+
+            <record id="E01PT01" model="holidays.event">
+                <field name="calendar" ref="PT01"/>
+                <field name="summary">Ano Novo</field>
+                <field name="dtstart">2012-01-01</field>
+                <field name="status">confirmed</field>
+            </record>
+                <record id="RR01E01PT01" model="holidays.event.rrule">
+                    <field name="event" ref="E01PT01"/>
+                    <field name="freq">yearly</field>
+                    <field name="bymonth">1</field>
+                    <field name="bymonthday">1</field>
+                </record>
+
+            <record id="E02PT01" model="holidays.event">
+                <field name="calendar" ref="PT01"/>
+                <field name="summary">Sexta-Feira Santa</field>
+                <field name="dtstart">2012-01-01</field>
+                <field name="status">confirmed</field>
+            </record>
+                <record id="RR01E02PT01" model="holidays.event.rrule">
+                    <field name="event" ref="E02PT01"/>
+                    <field name="freq">yearly</field>
+                    <field name="byeaster">-2</field>
+                </record>
+
+            <record id="E03PT01" model="holidays.event">
+                <field name="calendar" ref="PT01"/>
+                <field name="summary">Domingo de Páscoa</field>
+                <field name="dtstart">2012-01-01</field>
+                <field name="status">confirmed</field>
+            </record>
+                <record id="RR01E03PT01" model="holidays.event.rrule">
+                    <field name="event" ref="E03PT01"/>
+                    <field name="freq">yearly</field>
+                    <field name="byeaster">0</field>
+                </record>
+
+            <record id="E04PT01" model="holidays.event">
+                <field name="calendar" ref="PT01"/>
+                <field name="summary">Dia da Liberdade</field>
+                <field name="dtstart">2012-01-01</field>
+                <field name="status">confirmed</field>
+            </record>
+                <record id="RR01E04PT01" model="holidays.event.rrule">
+                    <field name="event" ref="E04PT01"/>
+                    <field name="freq">yearly</field>
+                    <field name="bymonth">4</field>
+                    <field name="bymonthday">25</field>
+                </record>
+
+            <record id="E05PT01" model="holidays.event">
+                <field name="calendar" ref="PT01"/>
+                <field name="summary">Dia do Trabalhador</field>
+                <field name="dtstart">2012-01-01</field>
+                <field name="status">confirmed</field>
+            </record>
+                <record id="RR01E05PT01" model="holidays.event.rrule">
+                    <field name="event" ref="E05PT01"/>
+                    <field name="freq">yearly</field>
+                    <field name="bymonth">5</field>
+                    <field name="bymonthday">1</field>
+                </record>
+
+            <record id="E06PT01" model="holidays.event">
+                <field name="calendar" ref="PT01"/>
+                <field name="summary">Corpo de Deus</field>
+                <field name="dtstart">2012-01-01</field>
+                <field name="status">confirmed</field>
+            </record>
+                <record id="RR01E06PT01" model="holidays.event.rrule">
+                    <field name="event" ref="E06PT01"/>
+                    <field name="freq">yearly</field>
+                    <field name="byeaster">60</field>
+                </record>
+                <!-- Lei 23/2012, de 25 de junho, Suspenso entre 2013 e 2015 inclusive -->
+                <record id="EXD01E06PT01" model="holidays.event.exdate">
+                    <field name="event" ref="E06PT01"/>
+                    <field name="date">2013-05-30</field>
+                </record>
+                <record id="EXD02E06PT01" model="holidays.event.exdate">
+                    <field name="event" ref="E06PT01"/>
+                    <field name="date">2014-06-19</field>
+                </record>
+                <record id="EXD03E06PT01" model="holidays.event.exdate">
+                    <field name="event" ref="E06PT01"/>
+                    <field name="date">2015-06-04</field>
+                </record>
+
+            <record id="E07PT01" model="holidays.event">
+                <field name="calendar" ref="PT01"/>
+                <field name="summary">Dia de Portugal</field>
+                <field name="dtstart">2012-01-01</field>
+                <field name="status">confirmed</field>
+            </record>
+                <record id="RR01E07PT01" model="holidays.event.rrule">
+                    <field name="event" ref="E07PT01"/>
+                    <field name="freq">yearly</field>
+                    <field name="bymonth">6</field>
+                    <field name="bymonthday">10</field>
+                </record>
+
+            <record id="E08PT01" model="holidays.event">
+                <field name="calendar" ref="PT01"/>
+                <field name="summary">Assunção de Nossa Senhora</field>
+                <field name="dtstart">2012-01-01</field>
+                <field name="status">confirmed</field>
+            </record>
+                <record id="RR01E08PT01" model="holidays.event.rrule">
+                    <field name="event" ref="E08PT01"/>
+                    <field name="freq">yearly</field>
+                    <field name="bymonth">8</field>
+                    <field name="bymonthday">15</field>
+                </record>
+
+            <record id="E09PT01" model="holidays.event">
+                <field name="calendar" ref="PT01"/>
+                <field name="summary">Implantação da República</field>
+                <field name="dtstart">2012-01-01</field>
+                <field name="status">confirmed</field>
+            </record>
+                <record id="RR01E09PT01" model="holidays.event.rrule">
+                    <field name="event" ref="E09PT01"/>
+                    <field name="freq">yearly</field>
+                    <field name="bymonth">10</field>
+                    <field name="bymonthday">5</field>
+                </record>
+                <!-- Lei 23/2012, de 25 de junho, Suspenso entre 2013 e 2015 inclusive -->
+                <record id="EXD01E09PT01" model="holidays.event.exdate">
+                    <field name="event" ref="E09PT01"/>
+                    <field name="date">2013-10-05</field>
+                </record>
+                <record id="EXD02E09PT01" model="holidays.event.exdate">
+                    <field name="event" ref="E09PT01"/>
+                    <field name="date">2014-10-05</field>
+                </record>
+                <record id="EXD03E09PT01" model="holidays.event.exdate">
+                    <field name="event" ref="E09PT01"/>
+                    <field name="date">2015-10-05</field>
+                </record>
+
+            <record id="E10PT01" model="holidays.event">
+                <field name="calendar" ref="PT01"/>
+                <field name="summary">Todos os Santos</field>
+                <field name="dtstart">2012-01-01</field>
+                <field name="status">confirmed</field>
+            </record>
+                <record id="RR01E10PT01" model="holidays.event.rrule">
+                    <field name="event" ref="E10PT01"/>
+                    <field name="freq">yearly</field>
+                    <field name="bymonth">11</field>
+                    <field name="bymonthday">1</field>
+                </record>
+                <!-- Lei 23/2012, de 25 de junho, Suspenso entre 2013 e 2015 inclusive -->
+                <record id="EXD01E10PT01" model="holidays.event.exdate">
+                    <field name="event" ref="E10PT01"/>
+                    <field name="date">2013-11-01</field>
+                </record>
+                <record id="EXD02E10PT01" model="holidays.event.exdate">
+                    <field name="event" ref="E10PT01"/>
+                    <field name="date">2014-11-01</field>
+                </record>
+                <record id="EXD03E10PT01" model="holidays.event.exdate">
+                    <field name="event" ref="E10PT01"/>
+                    <field name="date">2015-11-01</field>
+                </record>
+
+            <record id="E11PT01" model="holidays.event">
+                <field name="calendar" ref="PT01"/>
+                <field name="summary">Restauração da Independência</field>
+                <field name="dtstart">2012-01-01</field>
+                <field name="status">confirmed</field>
+            </record>
+                <record id="RR01E11PT01" model="holidays.event.rrule">
+                    <field name="event" ref="E11PT01"/>
+                    <field name="freq">yearly</field>
+                    <field name="bymonth">12</field>
+                    <field name="bymonthday">1</field>
+                </record>
+                <!-- Lei 23/2012, de 25 de junho, Suspenso entre 2013 e 2015 inclusive -->
+                <record id="EXD01E11PT01" model="holidays.event.exdate">
+                    <field name="event" ref="E11PT01"/>
+                    <field name="date">2013-12-01</field>
+                </record>
+                <record id="EXD02E11PT01" model="holidays.event.exdate">
+                    <field name="event" ref="E11PT01"/>
+                    <field name="date">2014-12-01</field>
+                </record>
+                <record id="EXD03E11PT01" model="holidays.event.exdate">
+                    <field name="event" ref="E11PT01"/>
+                    <field name="date">2015-12-01</field>
+                </record>
+
+            <record id="E12PT01" model="holidays.event">
+                <field name="calendar" ref="PT01"/>
+                <field name="summary">Imaculada Conceição</field>
+                <field name="dtstart">2012-01-01</field>
+                <field name="status">confirmed</field>
+            </record>
+                <record id="RR01E12PT01" model="holidays.event.rrule">
+                    <field name="event" ref="E12PT01"/>
+                    <field name="freq">yearly</field>
+                    <field name="bymonth">12</field>
+                    <field name="bymonthday">8</field>
+                </record>
+
+            <record id="E13PT01" model="holidays.event">
+                <field name="calendar" ref="PT01"/>
+                <field name="summary">Natal</field>
+                <field name="dtstart">2012-01-01</field>
+                <field name="status">confirmed</field>
+            </record>
+                <record id="RR01E13PT01" model="holidays.event.rrule">
+                    <field name="event" ref="E13PT01"/>
+                    <field name="freq">yearly</field>
+                    <field name="bymonth">12</field>
+                    <field name="bymonthday">25</field>
+                </record>
+    </data>
+</tryton>
