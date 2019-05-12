@@ -22,6 +22,6 @@
 
 from trytond.pool import Pool
 
+
 def register():
-    Pool.register(
-        module='holidays_pt', type_='model')
+    Pool.register(module='holidays_pt', type_='model')
